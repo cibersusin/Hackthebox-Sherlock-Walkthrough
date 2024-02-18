@@ -8,7 +8,7 @@ Reto en HTB:
 https://app.hackthebox.com/sherlocks/Bumblebee
 
 Resolución: 
-https://github.com/cibersusin/Hackthebox-Sherlock-Walkthrough/tree/main/Meerkat
+https://github.com/cibersusin/Hackthebox-Sherlock-Walkthrough/tree/main/bumblebee
 
 ## 2. Merkat
 Reto en HTB:
