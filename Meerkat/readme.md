@@ -79,7 +79,7 @@ Podemos ver que tenemos en este caso la comunicación de 2 intentos de login de 
 A este ataque se conoce como **Credential Stuffing** (Relleno de credenciales) que consiste en el relleno de credenciales en formularios de inicio de sesión. Suele ser habitual probar las contraseñas más comunes utilizadas o si hay una brecha conocida de alguna filtración y se quieren probar si alguna credencial es valida.
 
 Fuente: https://owasp.org/www-community/attacks/Credential_stuffing
-![[Pasted image 20240218123252.png]]
+![curl](images/12-owasp-credential-stuffing.png)
 
 ----
 
@@ -92,7 +92,7 @@ CVE-2022-25237
 ##### Bonus: Conociendo que hace el CVE-2022-25237
 Bonita Web 2021.2 tiene una vulnerabilidad con RCE (Remote Code Execution) y una puntuación crítica de 9.8
 Como nos dice el reporte i18ntranslation o /../i18ntranslation/ al final de una URL se hace un bypass
-![curl](images/12-owasp-credential-stuffing.png)
+![curl](images/14-cve-2022-25237.png)
 Fuente: https://nvd.nist.gov/vuln/detail/CVE-2022-25237
 
 ----
@@ -109,12 +109,15 @@ Y si seguimos esta petición como anteriormente "Seguir > HTTP Stream" veremos c
 
 ##### Bonus: Conociendo rce-api.extension.zip
 Este archivo se encuentra publicado en Github: https://github.com/RhinoSecurityLabs/CVEs/tree/master/CVE-2022-25237
-Según la POC sirve para facilitar la interacción con el bypassing e interactuar con la shell del servidor.
-Usage/Exploitation
-Usage: python3 .\exploit.py <username> <password> http://localhost:8080/bonita 'cat /etc/passwd'
 
-Screenshot
-![curl](images/poc-image.png)
+Según la POC sirve para facilitar la interacción con el bypassing e interactuar con la shell del servidor.
+
+```
+python3 .\exploit.py <username> <password> http://localhost:8080/bonita 'cat /etc/passwd'
+```
+
+![curl](images/poc_image.png)
+
 ----
 
 ### Tarea 5
