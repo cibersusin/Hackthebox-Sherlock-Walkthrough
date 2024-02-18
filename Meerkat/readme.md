@@ -1,3 +1,14 @@
+# Meerkat
+Plataforma: Hackthebox
+
+Reto: Sherlock
+
+Dificultad: Fácil
+
+Categoria: SOC
+
+Enlace: https://app.hackthebox.com/sherlocks/Meerkat
+
 ## DESCRIPCIÓN DEL RETO (Traducción oficial)
 Como empresa emergente de rápido crecimiento, Forela ha estado utilizando una plataforma de gestión empresarial. Desafortunadamente nuestra documentación es escasa y nuestros administradores no son los más conscientes de la seguridad. 
 
