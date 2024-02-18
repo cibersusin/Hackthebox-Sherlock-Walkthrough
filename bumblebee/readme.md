@@ -1,3 +1,13 @@
+# Bumblebee
+Plataforma: Hackthebox
+
+Reto: Sherlock
+
+Dificultad: Fácil
+
+Categoria: DFIR
+
+Enlace: https://app.hackthebox.com/sherlocks/Bumblebee
 
 ## DESCRIPCIÓN DEL RETO (Traducción oficial)
 ¡Un contratista externo ha accedido al foro interno aquí en Forela a través del *WiFi para invitados* y parece tener *credenciales robadas para el usuario administrativo*!
