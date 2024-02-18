@@ -18,7 +18,7 @@ Para esto nos vamos a Estadisticas > Conversaciones y en ipv4 vemos facillmente 
 - 172.31.6.44: Vemos que es la principal siempre por lo que entendemos que es el servidor. Otro punto importante es saber que es un rango privado tipo B, 172.16.0.0 a 172.31.255.255.
 - El resto de ips vemos que son ips publicas de una forma clara y bastante diversas a primera vista.
 
-![[Pasted image 20240217003410.png|700]]
+![curl](images/01-Equipos.png)
 
 ### Protocolos
 *2. ¿Qué protocolos se están utilizando?*
@@ -27,20 +27,20 @@ También algo que nos aportará mucha información de inicio es saber el tipo de
 En la imagen siguiente se ve que el tráfico 95% es HTTP y de tipo "media".
 También vemos 350 paquetes de SSH que habrá que revisar.
 Y una parte a revisar es la URL encoded, ya que podría ser motivo de una reverse shell.
-![[Pasted image 20240217004434.png|700]]
+![curl](images/02-protocolos.png)
 
 ### ips
 Al ser tráfico HTTP me gusta también saber si hay resoluciones de los equipos, para descartar ips de repositorios y otras web de contenido de terceros
 Para eso vamos a Estadisticas > Direcciones resueltas.
 - Muy interesante conocer que el nombre de equipo de la ip 172.31.6.44 es "ip-172-31-6-44.ec2.internal"
 - Sospechoso también pastes.io 
-![[Pasted image 20240217004704.png|600]]
+![curl](images/03-direcciones.png)
 
 Si es tráfico HTTP nos interesa conocer las peticiones, y una forma rapida de verlas organizadas es en: *Estadisticas > HTTP > Peticiones*
 Aquí vemos que ha habido acceso a la API bonita (provee REST y API Java para interactuar en el runtime)
 "i18translation" lo veremos en detalle después que es el exploit que explota el atacante.
 Y nos encontramos la interacción de la shell y controlada por el atacante.
-![[Pasted image 20240217113044.png|800]]
+![curl](images/04-cve.png)
 
 Vamos a ir directamente a por el atacante, con la URI extraída de la reverse shell hacemos una busqueda.
 ```shell
@@ -48,11 +48,10 @@ http.request.uri contains "/bonita/API/extension/rce?p=0&c=1&cmd=bash%20bx5gcr0e
 ```
 
 Ip sospechosa del atacante que sí que logro acceso: 138.199.59.221
-![[Pasted image 20240217184542.png|800]]
+![curl](images/05-reverse_shell.png)
 
 Además es la misma ip que lanza el exploit que vemos en meerkat-alerts.json
-![[Pasted image 20240218101225.png]]
-
+![curl](images/06-reverse_shell_bash.png)
 
 ----
 ### Tarea 1
