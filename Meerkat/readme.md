@@ -166,6 +166,7 @@ Volvemos a revisarlo con: Estidisticas > HTTP > Peticiones, viendo: *pastes.io*
 **Proporcione el nombre de archivo de la llave publica usada por el atacante para conseguir persistencia en nuestro host?**
 
 Seguimos tirando del hilo y visitamos este recurso web: https://pastes.io/raw/bx5gcr0et8
+
 Vemos que es un script de bash, que lo que hace es añadir lo que hay en otro pastes.io al fichero con las claves de ssh, así poder acceder con ubuntu de forma directa.
 ![curl](images/22-curl-pastes.png)
 
@@ -183,10 +184,12 @@ Con la investigación anterior ya tenemos claro que se modificó el authized key
 
 ### Tarea 10
 **¿Puedes confirmar el ID tecnica MITRE de este tipo de mecanismo de persistencia?**
+
 Buscamos en internet sobre ssh authorized keys y muy rapidamente encontramos en la pagina de MITRE.
 
 Fuente: https://attack.mitre.org/techniques/T1098/004/
 ![curl](images/23-mitre-ssh-authorized-keys.png)
+
 
 Y ya hemos acabado el sherlock, como veis ha sido bastante sencillo aunque si no has utilizado Wireshark a menudo puede haberte costado algo más ;) ¡Enhorabuena!
 ![curl](images/24-meerkat-complete.png)
